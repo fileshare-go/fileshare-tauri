@@ -15,12 +15,19 @@ name = "fileshare_tauri_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-prost-build = "0.14.1"
 tauri-build = { version = "2", features = [] }
+tonic-build = { version = "0.13.1", features = ["prost"] }
 
 [dependencies]
 tauri = { version = "2", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-prost = "0.14.1"
+tonic = { git = "https://github.com/hyperium/tonic.git", version = "0.14" }
+anyerror = "0.1.13"
+anyhow = "1.0.98"
+sha2 = "0.10.9"
+hex = "0.4.3"
+prost = "0.14"
+tokio = { version = "1.45.1", features = ["rt-multi-thread"] }
+tokio-stream = "0.1.17"
